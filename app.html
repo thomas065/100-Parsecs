@@ -13,6 +13,11 @@
 
         <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
 
+        <!-- Google Fonts for 100 Parsecs -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+
         <link href="css/site.css" rel="stylesheet">
         <link rel="icon" type="image/png" href="img/favicon-32x32.png">
 
@@ -22,7 +27,7 @@
         <!-- ===== Nav Section ==== -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="img/favicon-32x32.png" class="d-inline-block align-text-top"
+                <a class="navbar-brand logoFont" href="#"><img src="img/favicon-32x32.png" class="d-inline-block align-text-top"
                         alt="Thomas Bell logo" width="40" height="35">100 Parsecs</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -52,8 +57,43 @@
         </nav>
         <!-- ===== Main Section ==== -->
         <main class="flex-shrink-0">
-            <div class="container">
-
+            <div class="container mt-5">
+                <div class="row row-cols-1 row-cols-lg-2">
+                    <div class="col col-lg-4 border-end border-2">
+                        <h1 class="logoFont">100 Parsecs: A Coding Project</h1>
+                        <h4 class="lead">
+                            Travel as fast as the stars. A javascript coding exercise using loops. Write a program that
+                            displays the numbers from 0 to 100, displaying the even numbers in <strong>BOLD</strong>.
+                        </h4>
+                        <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                        <p>Enter a starting value and an ending value.  Press the button and the values will appear.</p>
+                    </div>
+                    <div class="col col-lg-8">
+                        <div>
+                            <h5>Enter Values:</h5>
+                            <form class="row gy-2 gx-3">
+                                <div class="col">
+                                    <input id="startValue" type="number" class="form-control" placeholder="Start Value" value="0" aria-label="Start Value">
+                                </div>
+                                <div class="col">
+                                    <input id="endValue" type="number" class="form-control" placeholder="End Value"
+                                        value="100" aria-label="End Value">
+                                </div>
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Parsecs Traveled</button>
+                                </div>
+                            </form>
+                            <h2 class="mt-5 border-bottom" border-2>Results</h2>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-sm">
+                                    <tbody id="results">
+                                        <!-- Results Go Here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
         <!-- ===== Footer Section ==== -->
