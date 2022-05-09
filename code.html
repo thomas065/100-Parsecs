@@ -28,8 +28,9 @@
         <!-- ===== Nav Section ==== -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top ">
             <div class="container-fluid">
-                <a class="navbar-brand logoFont" href="#"><img src="img/favicon-32x32.png" class="d-inline-block align-text-top"
-                        alt="Thomas Bell logo" width="40" height="35">100 Parsecs</a>
+                <a class="navbar-brand logoFont" href="#"><img src="img/favicon-32x32.png"
+                        class="d-inline-block align-text-top" alt="Thomas Bell logo" width="40" height="35">100
+                    Parsecs</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,14 +59,64 @@
         </nav>
         <!-- ===== Main Section ==== -->
         <main class="flex-shrink-0">
-            <div class="container py-4 px-5 mt-5">
+            <div class="container py-8 px-5 mt-5">
                 <h2 class="border-2 border-bottom border-dark">The Code for 100 Parsecs.</h2>
                 <div class="row row-cols-1 row-cols-lg-2">
                     <div class="col-lg-8">
                         <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function helloWorld() {
-                        alert("hello World");
+                        //get the values from the Page
+                        //starts or controller function
+                        function getValues() {
+                        //get values from the page
+                        let startValue = document.getElementById("startValue").value;
+                        let endValue = document.getElementById("endValue").value;
+
+                        //We need to validate our input
+                        //parse into Integers
+                        startValue = parseInt(startValue);
+                        endValue = parseInt(endValue);
+
+                        if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+                            //we call generateNumbers
+                            let numbers = generateNumbers(startValue, endValue);
+                            //we call displayNumbers
+                            displayNumbers(numbers);
+                            } else {
+                        alert("You must use Integers only")
+                            }
+                        }
+
+                        //generate numbers from the startValue to the endValue
+                        //logic function(s)
+                        function generateNumbers(sValue, eValue) {
+                        let numbers = [];
+
+                        //we want to get all numbers from start to end
+
+                        for (let i = sValue; i <= eValue; i++) {
+                            //this will execute in a loop until index=eValue
+                            numbers.push(i);
+                            }
+                            return numbers;
+                        }
+                        //display the numbers and mark even numbers bold
+                        
+                        //display or view functions
+                        function displayNumbers(numbers) {
+                            let templateRows="" ;
+                            for (let i=0; i < numbers.length; i++) {
+                            let className="even" ;
+                            let number=numbers[i];
+                                if (number % 2==0) {
+                                    className="even" ;
+                                }else{ className="odd" ;
+                                }
+                                //This does render correctly with Prism, see the source.
+                                templateRows += `&lt;tr>&lt;td class="${className}">${number}&lt;/td>&lt;/tr>`;
+                            }
+
+                        document.getElementById("results").innerHTML = templateRows;
+
                         }
                         </code>
                     </pre>

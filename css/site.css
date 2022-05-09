@@ -5,6 +5,14 @@
     --white-color: #dff3e4;
 }
 
+.odd {
+    font-weight: 100;
+}
+
+.even {
+    font-weight: bolder;
+}
+
 .logoFont {
     font-family: 'Racing Sans One', cursive;
 }
