@@ -122,9 +122,31 @@
                     </pre>
                     </div>
                     <div class="col-lg-4">
-                        <p>The Code is structured in one function.</p>
-                        <h5>Hello World</h5>
-                        <p>Hello World is a function that displays an alert with a message of "Hello World".</p>
+                        <p>Three functions are the engine that drives this code:</p>
+                        <h5>getValues</h5>
+                        <p>
+                            getValues accepts(gets) the user's input from the page.  The info is then accessed by
+                            <strong>getElementById</strong> to pull the values from the code.  The code then passes those values
+                            to the <strong>generateNumbers</strong> function.  That function returns an array of values and passes it on to the <strong>displayNumbers</strong> function.
+                        </p>
+                        <h5>generateNumbers</h5>
+                        <p>
+                            generateNumbers consists of two arguments of <strong>startValue</strong> and
+                            <strong>endValue</strong>. I created a varaible called <strong>numbers</strong> so that held an array so the for loop could generate all numbers between <strong>startValue</strong> and
+                            <strong>endValue</strong>.
+                        </p>
+                        <h5>displayNumbers</h5>
+                        <p>
+                            displayNumbers uses a single argument, numbers. The variable numbers is an array that holds
+                            the value of <strong>startValue</strong> and <strong>endValue</strong>.  Thus created a varaible <strong>className</strong> that is linked to the CSS class I used to <em>BOLD</em> the numbers.
+                            I also created <strong>templateRows</strong> to hold the HTML that is written to the page.
+                        </p>
+                        <p>
+                            A for loop was created to confirm whether or not the numbers are "odd" or "even".  This made
+                            good use of the modulo (%) operator, so long as the number is divisible by two. If it returned
+                            zero (0), then it is in fact an even number.  The correct <strong>className</strong> is then pushed
+                            to the HTML row to be displayed.  Each iteration of the loop is added to the <strong>templateRows</strong> variable and then added to the respectec page table.
+                        </p>
                     </div>
                 </div>
             </div>
